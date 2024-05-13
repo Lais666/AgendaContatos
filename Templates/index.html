@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista de Contatos</title>
+</head>
+<body>
+    <h1>Lista de Contatos</h1>
+    <ul>
+        {% for contato in contatos %}
+        <li>
+            {{ contato.nome }} - {{ contato.telefone }} - {{ contato.email }}
+            {% if contato.favorito %}
+                <span style="color: green;">Favorito</span>
+            {% endif %}
+            <a href="/editar_contato/{{ loop.index0 }}">Editar</a>
+            <a href="/apagar_contato/{{ loop.index0 }}">Apagar</a>
+            <a href="/marcar_favorito/{{ loop.index0 }}">Marcar como Favorito</a>
+            <a href="/desmarcar_favorito/{{ loop.index0 }}">Desmarcar como Favorito</a>
+        </li>
+        {% endfor %}
+    </ul>
+    <h2><a href="/contatos_favoritos">Ver Contatos Favoritos</a></h2>
+    <h2><a href="/adicionar_contato">Adicionar Contato</a></h2>
+</body>
+</html>
