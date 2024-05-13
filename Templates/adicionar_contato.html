@@ -1,22 +1,22 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Adicionar Contato</title>
+    <meta charset="UTF-8"> <!-- Define o conjunto de caracteres como UTF-8 para suportar caracteres especiais -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Configura a escala inicial e a largura da visualização para dispositivos móveis -->
+    <title>Adicionar Contato</title> <!-- Define o título da página -->
 </head>
 <body>
-    <h1>Adicionar Contato</h1>
-    <form action="/adicionar_contato" method="POST">
-        <label for="nome">Nome:</label><br>
-        <input type="text" id="nome" name="nome"><br>
-        <label for="telefone">Telefone:</label><br>
-        <input type="text" id="telefone" name="telefone"><br>
-        <label for="email">Email:</label><br>
-        <input type="text" id="email" name="email"><br>
-        <input type="checkbox" id="favorito" name="favorito">
-        <label for="favorito">Favorito</label><br>
-        <input type="submit" value="Adicionar">
+    <h1>Adicionar Contato</h1> <!-- Título principal da página -->
+    <form action="/adicionar_contato" method="POST"> <!-- Formulário para adicionar um novo contato. O 'action' indica para onde os dados do formulário serão enviados e o 'method' indica o método HTTP usado (neste caso, POST) -->
+        <label for="nome">Nome:</label><br> <!-- Rótulo e campo de entrada para o nome do contato -->
+        <input type="text" id="nome" name="nome"><br> <!-- Campo de entrada para o nome do contato -->
+        <label for="telefone">Telefone:</label><br> <!-- Rótulo e campo de entrada para o telefone do contato -->
+        <input type="text" id="telefone" name="telefone"><br> <!-- Campo de entrada para o telefone do contato -->
+        <label for="email">Email:</label><br> <!-- Rótulo e campo de entrada para o email do contato -->
+        <input type="text" id="email" name="email"><br> <!-- Campo de entrada para o email do contato -->
+        <input type="checkbox" id="favorito" name="favorito"> <!-- Caixa de seleção para marcar o contato como favorito -->
+        <label for="favorito">Favorito</label><br> <!-- Rótulo para a caixa de seleção de favorito -->
+        <input type="submit" value="Adicionar"> <!-- Botão de envio do formulário -->
     </form>
 </body>
 </html>

@@ -1,22 +1,22 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Editar Contato</title>
+    <meta charset="UTF-8"> <!-- Define o conjunto de caracteres como UTF-8 para suportar caracteres especiais -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Configura a escala inicial e a largura da visualização para dispositivos móveis -->
+    <title>Editar Contato</title> <!-- Define o título da página -->
 </head>
 <body>
-    <h1>Editar Contato</h1>
-    <form action="/editar_contato/{{ contato[0] }}" method="POST">
-        <label for="nome">Nome:</label><br>
-        <input type="text" id="nome" name="nome" value="{{ contato[1] }}"><br>
-        <label for="telefone">Telefone:</label><br>
-        <input type="text" id="telefone" name="telefone" value="{{ contato[2] }}"><br>
-        <label for="email">Email:</label><br>
-        <input type="text" id="email" name="email" value="{{ contato[3] }}"><br>
-        <input type="checkbox" id="favorito" name="favorito" {% if contato[4] %}checked{% endif %}>
-        <label for="favorito">Favorito</label><br>
-        <input type="submit" value="Salvar">
+    <h1>Editar Contato</h1> <!-- Título principal da página -->
+    <form action="/editar_contato/{{ contato[0] }}" method="POST"> <!-- Formulário para editar um contato. O 'action' indica para onde os dados do formulário serão enviados e o 'method' indica o método HTTP usado (neste caso, POST) -->
+        <label for="nome">Nome:</label><br> <!-- Rótulo e campo de entrada para o nome do contato -->
+        <input type="text" id="nome" name="nome" value="{{ contato[1] }}"><br> <!-- Campo de entrada para o nome do contato, com o valor pré-definido preenchido com o nome atual do contato -->
+        <label for="telefone">Telefone:</label><br> <!-- Rótulo e campo de entrada para o telefone do contato -->
+        <input type="text" id="telefone" name="telefone" value="{{ contato[2] }}"><br> <!-- Campo de entrada para o telefone do contato, com o valor pré-definido preenchido com o número atual do contato -->
+        <label for="email">Email:</label><br> <!-- Rótulo e campo de entrada para o email do contato -->
+        <input type="text" id="email" name="email" value="{{ contato[3] }}"><br> <!-- Campo de entrada para o email do contato, com o valor pré-definido preenchido com o email atual do contato -->
+        <input type="checkbox" id="favorito" name="favorito" {% if contato[4] %}checked{% endif %}> <!-- Caixa de seleção para marcar o contato como favorito. Se o contato já for favorito, a caixa será marcada automaticamente -->
+        <label for="favorito">Favorito</label><br> <!-- Rótulo para a caixa de seleção de favorito -->
+        <input type="submit" value="Salvar"> <!-- Botão de envio do formulário -->
     </form>
 </body>
 </html>

@@ -1,23 +1,23 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contatos Favoritos</title>
+    <meta charset="UTF-8"> <!-- Define o conjunto de caracteres como UTF-8 para suportar caracteres especiais -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Configura a escala inicial e a largura da visualização para dispositivos móveis -->
+    <title>Contatos Favoritos</title> <!-- Define o título da página -->
 </head>
 <body>
-    <h1>Contatos Favoritos</h1>
+    <h1>Contatos Favoritos</h1> <!-- Título principal da página -->
     <ul>
-        {% for contato in favoritos %}
-        <li>{{ contato[1] }} - {{ contato[2] }} - {{ contato[3] }}
+        {% for contato in favoritos %} <!-- Loop através de cada contato favorito -->
+        <li>{{ contato[1] }} - {{ contato[2] }} - {{ contato[3] }} <!-- Exibe as informações do contato, incluindo o nome, número de telefone e email -->
             <ul>
-                <li><a href="/editar_contato/{{ loop.index0 }}">Editar</a></li>
-                <li><a href="/desmarcar_favorito/{{ loop.index0 }}">Remover dos Favoritos</a></li>
-                <li><a href="/apagar_contato/{{ loop.index0 }}">Apagar</a></li>
+                <li><a href="/editar_contato/{{ loop.index0 }}">Editar</a></li> <!-- Link para editar o contato -->
+                <li><a href="/desmarcar_favorito/{{ loop.index0 }}">Remover dos Favoritos</a></li> <!-- Link para remover o contato dos favoritos -->
+                <li><a href="/apagar_contato/{{ loop.index0 }}">Apagar</a></li> <!-- Link para apagar o contato -->
             </ul>
         </li>
         {% endfor %}
     </ul>
-    <a href="/">Voltar para Lista de Contatos</a>
+    <a href="/">Voltar para Lista de Contatos</a> <!-- Link para retornar à lista completa de contatos -->
 </body>
 </html>

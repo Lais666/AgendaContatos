@@ -1,25 +1,25 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Lista de Contatos</title>
+    <meta charset="UTF-8"> <!-- Define o conjunto de caracteres como UTF-8 para suportar caracteres especiais -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Configura a escala inicial e a largura da visualização para dispositivos móveis -->
+    <title>Lista de Contatos</title> <!-- Define o título da página -->
 </head>
 <body>
-    <h1>Lista de Contatos</h1>
+    <h1>Lista de Contatos</h1> <!-- Título principal da página -->
     <ul>
-        {% for contato in contatos %}
-        <li>{{ contato[1] }} - {{ contato[2] }} - {{ contato[3] }}{% if contato[4] %} (Favorito){% endif %}
+        {% for contato in contatos %} <!-- Loop através de cada contato na lista de contatos -->
+        <li>{{ contato[1] }} - {{ contato[2] }} - {{ contato[3] }}{% if contato[4] %} (Favorito){% endif %} <!-- Exibe as informações do contato, incluindo o nome, número de telefone e email. Se for favorito, adiciona um marcador -->
             <ul>
-                <li><a href="/editar_contato/{{ loop.index0 }}">Editar</a></li>
-                <li><a href="/marcar_favorito/{{ loop.index0 }}">Marcar como Favorito</a></li>
-                <li><a href="/desmarcar_favorito/{{ loop.index0 }}">Desmarcar Favorito</a></li>
-                <li><a href="/apagar_contato/{{ loop.index0 }}">Apagar</a></li>
+                <li><a href="/editar_contato/{{ loop.index0 }}">Editar</a></li> <!-- Link para editar o contato -->
+                <li><a href="/marcar_favorito/{{ loop.index0 }}">Marcar como Favorito</a></li> <!-- Link para marcar o contato como favorito -->
+                <li><a href="/desmarcar_favorito/{{ loop.index0 }}">Desmarcar Favorito</a></li> <!-- Link para desmarcar o contato como favorito -->
+                <li><a href="/apagar_contato/{{ loop.index0 }}">Apagar</a></li> <!-- Link para apagar o contato -->
             </ul>
         </li>
         {% endfor %}
     </ul>
-    <a href="/adicionar_contato">Adicionar Contato</a>
-    <a href="/contatos_favoritos">Ver Favoritos</a>
+    <a href="/adicionar_contato">Adicionar Contato</a> <!-- Link para adicionar um novo contato -->
+    <a href="/contatos_favoritos">Ver Favoritos</a> <!-- Link para ver todos os contatos marcados como favoritos -->
 </body>
 </html>
