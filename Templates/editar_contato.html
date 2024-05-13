@@ -7,14 +7,14 @@
 </head>
 <body>
     <h1>Editar Contato</h1>
-    <form action="/editar_contato/{{ contato.id }}" method="POST">
+    <form action="/editar_contato/{{ contato[0] }}" method="POST">
         <label for="nome">Nome:</label><br>
-        <input type="text" id="nome" name="nome" value="{{ contato.nome }}"><br>
+        <input type="text" id="nome" name="nome" value="{{ contato[1] }}"><br>
         <label for="telefone">Telefone:</label><br>
-        <input type="text" id="telefone" name="telefone" value="{{ contato.telefone }}"><br>
+        <input type="text" id="telefone" name="telefone" value="{{ contato[2] }}"><br>
         <label for="email">Email:</label><br>
-        <input type="email" id="email" name="email" value="{{ contato.email }}"><br>
-        <input type="checkbox" id="favorito" name="favorito" {% if contato.favorito %} checked {% endif %}>
+        <input type="text" id="email" name="email" value="{{ contato[3] }}"><br>
+        <input type="checkbox" id="favorito" name="favorito" {% if contato[4] %}checked{% endif %}>
         <label for="favorito">Favorito</label><br>
         <input type="submit" value="Salvar">
     </form>

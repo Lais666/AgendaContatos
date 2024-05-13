@@ -9,11 +9,15 @@
     <h1>Contatos Favoritos</h1>
     <ul>
         {% for contato in favoritos %}
-        <li>
-            {{ contato.nome }} - {{ contato.telefone }} - {{ contato.email }}
+        <li>{{ contato[1] }} - {{ contato[2] }} - {{ contato[3] }}
+            <ul>
+                <li><a href="/editar_contato/{{ loop.index0 }}">Editar</a></li>
+                <li><a href="/desmarcar_favorito/{{ loop.index0 }}">Remover dos Favoritos</a></li>
+                <li><a href="/apagar_contato/{{ loop.index0 }}">Apagar</a></li>
+            </ul>
         </li>
         {% endfor %}
     </ul>
-    <h2><a href="/">Voltar para Lista de Contatos</a></h2>
+    <a href="/">Voltar para Lista de Contatos</a>
 </body>
 </html>
